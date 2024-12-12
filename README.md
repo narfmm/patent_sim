@@ -1,7 +1,7 @@
 # patent_sim
 Use Gen AI and vector database to search for patent similiarities
 
-Update 12-12-24, changed simularity calculation from scikit-learn to a simple calculation and numba, seeing a ~100x speed up for simularity calculations, from about 8 minutes to about 4 seconds on the i5
+Update 12-12-24, changed simularity calculation from scikit-learn to a simple calculation and numba, seeing a ~100x speed up for simularity calculations, from about 8 minutes to about 4 seconds on the i5 per million comparisons.  Also added tqdm progress bar
 
 Update 12-11-24, found out a fix for GPU passthrough working with Linux in ProxMox.  1.  Make sure the CPU type for the VM is set to host.  2.  Edit the Ollama system variable for GPU -> sudo systemctl edit ollama.service  3.  Set CUDA_VISIBLE_DEVICES=0 ollama; save and then restart Ollama by systemctl restart ollama  This definitely worked for me, with Ollama version 0.4.7.
 
